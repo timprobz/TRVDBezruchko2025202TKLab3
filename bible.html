@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бібліотека українських книг</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    header {
+      background-color: #2b6cb0;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white !important;
+    }
+
+    .books {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .book {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      padding: 15px;
+      width: 250px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .book h3 {
+      margin-top: 10px;
+    }
+
+    .book img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #2b6cb0;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Бібліотека українських книг</h1>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Головна</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">Про сайт</a></li>
+          <li class="nav-item"><a class="nav-link" href="bible.html">Бібліотека</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5">
+    <h2 class="text-center">Каталог українських книг</h2>
+    <div class="books">
+      <div class="book">
+        <h3>Я бачу вас цікавить пітьма</h3>
+        <p>Ілларіон Павлюк • 2023</p>
+        <img src="https://upload.wikimedia.org/wikipedia/uk/a/ad/%22%D0%AF_%D0%B1%D0%B0%D1%87%D1%83%2C_%D0%B2%D0%B0%D1%81_%D1%86%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C_%D0%BF%D1%96%D1%82%D1%8C%D0%BC%D0%B0%22_%D0%86%D0%BB%D0%BB%D0%B0%D1%80%D1%96%D0%BE%D0%BD_%D0%9F%D0%B0%D0%B2%D0%BB%D1%8E%D0%BA%2C_%D0%BE%D0%B1%D0%BA%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BA%D0%B0.jpg" alt="Я бачу вас цікавить пітьма">
+        <p>Трилер про загадкові події в сучасному світі та боротьбу з невідомим.</p>
+      </div>
+
+      <div class="book">
+        <h3>Колонія</h3>
+        <p>Макс Кідрук • 2023</p>
+        <img src="https://tamarinbooks.com/wp-content/uploads/2023/04/kidruk_new-1.jpg" alt="Колонія">
+        <p>Фантастичний роман про подорожі, технології та виживання у складних умовах.</p>
+      </div>
+
+      <div class="book">
+        <h3>Танці з кістками</h3>
+        <p>Андрій Сем’янків • 2023</p>
+        <img src="https://static.yakaboo.ua/media/cloudflare/product/webp/352x340/i/m/image00001_1_334_98712.jpg" alt="Танці з кістками">
+        <p>Медичний трилер про неймовірні випадки у лікарні та таємниці хірургії.</p>
+      </div>
+
+      <div class="book">
+        <h3>За Перекопом є земля</h3>
+        <p>Анастасія Левкова • 2022</p>
+        <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1679581311i/123510454.jpg" alt="За Перекопом є земля">
+        <p>Історичний роман про родинні та національні долі в часи великих змін.</p>
+      </div>
+
+      <div class="book">
+        <h3>Дім солі</h3>
+        <p>Світлана Тараторіна • 2021</p>
+        <img src="https://cdn1.ozone.ru/multimedia/c650/1025265172.jpg" alt="Дім солі">
+        <p>Сучасна драма про родинні секрети, любов і втрати на тлі українського села.</p>
+      </div>
+
+      <div class="book">
+        <h3>Чорний ворон</h3>
+        <p>Василь Шкляр • 2010</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Gm4fyi3EMsPItwnMR4W4L_91OrGCMbP4pA&s" alt="Чорний ворон">
+        <p>Історичний роман про боротьбу українського народу за свободу та національну гідність.</p>
+      </div>
+
+      <div class="book">
+        <h3>Солодка Даруся</h3>
+        <p>Марія Матіос • 2005</p>
+        <img src="https://upload.wikimedia.org/wikipedia/uk/a/ab/Solodka_Darusja_cover.jpg" alt="Солодка Даруся">
+        <p>Драма про життя та долю українського села в непрості часи XX століття.</p>
+      </div>
+      <div class="book">
+        <h3>Тіні забутих предків</h3>
+        <p>Михайло Коцюбинський • 1911</p>
+        <img src="https://libruk.com.ua/wp-content/uploads/tini-zabutykh-predkiv.jpg" alt="Тіні забутих предків">
+        <p>Класична українська повість про любов, природу та гуцульські традиції.</p>
+      </div>
+
+      <div class="book">
+        <h3>Лісова пісня</h3>
+        <p>Леся Українка • 1912</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/%D0%9B%D1%96%D1%81%D0%BE%D0%B2%D0%B0_%D0%BF%D1%96%D1%81%D0%BD%D1%8F._%D0%9E%D0%B1%D0%BA%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BA%D0%B0_%D0%B2%D0%B8%D0%B4%D0%B0%D0%BD%D0%BD%D1%8F_1914_%D1%80.jpg" alt="Лісова пісня">
+        <p>Відомий драматичний твір про кохання, природу та боротьбу людини з суспільством.</p>
+      </div>
+
+      <div class="book">
+        <h3>Ворошиловград</h3>
+        <p>Сергій Жадан • 2010</p>
+        <img src="https://upload.wikimedia.org/wikipedia/uk/3/33/Zhadan_2010.JPG" alt="Ворошиловград">
+        <p>Сучасний роман про пошуки себе, повернення додому та конфлікти на Донбасі.</p>
+      </div>
+
+      <div class="book">
+        <h3>Захар Беркут</h3>
+        <p>Іван Франко • 1883</p>
+        <img src="https://book-ye.com.ua/media/catalog/product/cache/79524a38d3bc3d0f3b6015a08841400c/8/b/8bc3dbea-563f-11eb-8144-000c29ae1566_ec839c7e-5640-11eb-8144-000c29ae1566.jpg" alt="Захар Беркут">
+        <p>Історична повість про боротьбу карпатських селян проти монгольських завойовників.</p>
+      </div>
+
+      <div class="book">
+        <h3>Кайдашева сім’я</h3>
+        <p>Іван Нечуй-Левицький • 1879</p>
+        <img src="https://libruk.com.ua/wp-content/uploads/kaidasheva-simia.jpg" alt="Кайдашева сім’я">
+        <p>Класична українська повість про сімейні стосунки, конфлікти та життя селян.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Бібліотека українських книг
+  </footer>
+</body>
+
+</html>

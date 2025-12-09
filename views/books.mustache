@@ -1,0 +1,104 @@
+{{<layout}}
+{{$content}}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Управління книгами</h2>
+    <a href="/books/create" class="btn btn-success">
+        <i class="bi bi-plus-circle"></i> Додати нову книгу
+    </a>
+</div>
+
+<!-- Search and Filter -->
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="GET" action="/books">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="search" value="{{searchTerm}}" placeholder="Пошук за назвою або автором...">
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select" name="genre">
+                        <option value="">Всі жанри</option>
+                        {{#genres}}
+                        <option value="{{this}}" {{#selectedGenre}}{{#equals this selectedGenre}}selected{{/equals}}{{/selectedGenre}}>{{this}}</option>
+                        {{/genres}}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select" name="year">
+                        <option value="">Всі роки</option>
+                        {{#years}}
+                        <option value="{{this}}" {{#selectedYear}}{{#equals this selectedYear}}selected{{/equals}}{{/selectedYear}}>{{this}}</option>
+                        {{/years}}
+                    </select>
+                </div>
+                <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-primary">Пошук</button>
+                    <a href="/books" class="btn btn-secondary">Скинути</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Books Table -->
+<div class="card">
+    <div class="card-body">
+        {{#books.length}}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Зображення</th>
+                        <th>Назва</th>
+                        <th>Автор</th>
+                        <th>Рік</th>
+                        <th>Жанр</th>
+                        <th>Статус</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#books}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>
+                            <img src="{{image}}" alt="{{title}}" style="width: 50px; height: 75px; object-fit: cover;">
+                        </td>
+                        <td><strong>{{title}}</strong></td>
+                        <td>{{author}}</td>
+                        <td>{{year}}</td>
+                        <td><span class="badge bg-secondary">{{genre}}</span></td>
+                        <td>
+                            <span class="book-status {{#status.available}}status-available{{/status.available}}{{^status.available}}status-unavailable{{/status.unavailable}}">
+                                {{#status.available}}Доступна{{/status.available}}{{^status.available}}На руках{{/status.unavailable}}
+                            </span>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="/books/edit/{{id}}" class="btn btn-sm btn-primary">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <form action="/books/delete/{{id}}" method="POST" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Видалити цю книгу?')">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/books}}
+                </tbody>
+            </table>
+        </div>
+        {{/books.length}}
+        {{^books}}
+        <div class="text-center py-5">
+            <p class="text-muted">Книг не знайдено</p>
+            <a href="/books/create" class="btn btn-primary">Додати першу книгу</a>
+        </div>
+        {{/books}}
+    </div>
+</div>
+{{/content}}
+{{/layout}}

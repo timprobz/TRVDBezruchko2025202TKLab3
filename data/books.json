@@ -1,0 +1,28 @@
+[
+    {
+        "id": "1",
+        "title": "Я бачу вас цікавить пітьма",
+        "author": "Ілларіон Павлюк",
+        "year": 2023,
+        "genre": "трилер",
+        "description": "Трилер про загадкові події в сучасному світі та боротьбу з невідомим.",
+        "image": "https://upload.wikimedia.org/wikipedia/uk/a/ad/%22%D0%AF_%D0%B1%D0%B0%D1%87%D1%83%2C_%D0%B2%D0%B0%D1%81_%D1%86%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C_%D0%BF%D1%96%D1%82%D1%8C%D0%BC%D0%B0%22_%D0%86%D0%BB%D0%BB%D0%B0%D1%80%D1%96%D0%BE%D0%BD_%D0%9F%D0%B0%D0%B2%D0%BB%D1%8E%D0%BA%2C_%D0%BE%D0%B1%D0%BA%D0%BB%D0%B0%D0%B4%D0%B8%D0%BD%D0%BA%D0%B0.jpg",
+        "isbn": "978-617-7654-23-1",
+        "status": "available",
+        "createdAt": "2024-01-15",
+        "updatedAt": "2024-01-15"
+    },
+    {
+        "id": "2",
+        "title": "Колонія",
+        "author": "Макс Кідрук",
+        "year": 2023,
+        "genre": "фантастика",
+        "description": "Фантастичний роман про подорожі, технології та виживання у складних умовах.",
+        "image": "https://tamarinbooks.com/wp-content/uploads/2023/04/kidruk_new-1.jpg",
+        "isbn": "978-617-8026-45-2",
+        "status": "available",
+        "createdAt": "2024-01-10",
+        "updatedAt": "2024-01-10"
+    }
+]

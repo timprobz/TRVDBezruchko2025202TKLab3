@@ -1,0 +1,99 @@
+{{<layout}}
+{{$content}}
+<div class="row">
+    <!-- Welcome Section -->
+    <div class="col-12 mb-4">
+        <div class="welcome-section p-4 rounded">
+            <h2 class="mb-3">Ласкаво просимо до електронної бібліотеки!</h2>
+            <p class="lead">Цей портал надає доступ до найкращих творів української літератури та дозволяє керувати бібліотечними ресурсами.</p>
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    {{#stats}}
+    <div class="col-md-3 mb-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">📖 Книги</h5>
+                <p class="display-6">{{totalBooks}}</p>
+                <a href="/books" class="btn btn-primary">Переглянути</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">✅ Доступні</h5>
+                <p class="display-6">{{availableBooks}}</p>
+                <a href="/books?status=available" class="btn btn-primary">Переглянути</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">⭐ Новинки</h5>
+                <p class="display-6">{{newBooks}}</p>
+                <a href="/books?year=2023" class="btn btn-primary">Переглянути</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">🚀 Швидкі дії</h5>
+                <div class="d-grid gap-2">
+                    <a href="/books/create" class="btn btn-success">Додати книгу</a>
+                    <a href="/users/create" class="btn btn-info">Додати користувача</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/stats}}
+
+    <!-- Recent Books -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Останні додані книги</h4>
+                <a href="/books/create" class="btn btn-success btn-sm">+ Додати книгу</a>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {{#recentBooks}}
+                    <div class="col-md-3 mb-4">
+                        <div class="card book-card h-100">
+                            <img src="{{image}}" class="card-img-top book-cover" alt="{{title}}">
+                            <div class="card-body">
+                                <h5 class="card-title book-title">{{title}}</h5>
+                                <p class="card-text book-author">{{author}}</p>
+                                <p class="card-text book-year">{{year}} • {{genre}}</p>
+                                <span class="book-status {{#status.available}}status-available{{/status.available}}{{^status.available}}status-unavailable{{/status.unavailable}}">
+                                    {{#status.available}}Доступна{{/status.available}}{{^status.available}}На руках{{/status.unavailable}}
+                                </span>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <a href="/books/edit/{{id}}" class="btn btn-sm btn-primary">Редагувати</a>
+                                <form action="/books/delete/{{id}}" method="POST" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Видалити цю книгу?')">Видалити</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {{/recentBooks}}
+                    {{^recentBooks}}
+                    <div class="col-12 text-center py-5">
+                        <p class="text-muted">Книги ще не додані</p>
+                        <a href="/books/create" class="btn btn-primary">Додати першу книгу</a>
+                    </div>
+                    {{/recentBooks}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/content}}
+{{/layout}}

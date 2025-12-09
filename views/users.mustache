@@ -1,0 +1,79 @@
+{{<layout}}
+{{$content}}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Управління користувачами</h2>
+    <a href="/users/create" class="btn btn-success">
+        <i class="bi bi-plus-circle"></i> Додати нового користувача
+    </a>
+</div>
+
+<!-- Users Table -->
+<div class="card">
+    <div class="card-body">
+        {{#users.length}}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ім'я</th>
+                        <th>Email</th>
+                        <th>Телефон</th>
+                        <th>Роль</th>
+                        <th>Дата реєстрації</th>
+                        <th>Статус</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#users}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{firstName}} {{lastName}}</td>
+                        <td>{{email}}</td>
+                        <td>{{phone}}</td>
+                        <td>
+                            {{#equals role "адміністратор"}}
+                            <span class="badge bg-danger">{{role}}</span>
+                            {{/equals}}
+                            {{^equals role "адміністратор"}}
+                            <span class="badge bg-primary">{{role}}</span>
+                            {{/equals}}
+                        </td>
+                        <td>{{registrationDate}}</td>
+                        <td>
+                            {{#equals status "активний"}}
+                            <span class="badge bg-success">{{status}}</span>
+                            {{/equals}}
+                            {{^equals status "активний"}}
+                            <span class="badge bg-secondary">{{status}}</span>
+                            {{/equals}}
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="/users/edit/{{id}}" class="btn btn-sm btn-primary">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <form action="/users/delete/{{id}}" method="POST" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Видалити цього користувача?')">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/users}}
+                </tbody>
+            </table>
+        </div>
+        {{/users.length}}
+        {{^users}}
+        <div class="text-center py-5">
+            <p class="text-muted">Користувачів не знайдено</p>
+            <a href="/users/create" class="btn btn-primary">Додати першого користувача</a>
+        </div>
+        {{/users}}
+    </div>
+</div>
+{{/content}}
+{{/layout}}

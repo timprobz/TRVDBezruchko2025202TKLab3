@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "firstName": "Іван",
+        "lastName": "Петренко",
+        "email": "ivan@example.com",
+        "phone": "+380991234567",
+        "role": "читач",
+        "registrationDate": "2024-01-15",
+        "status": "активний"
+    },
+    {
+        "id": "2",
+        "firstName": "Марія",
+        "lastName": "Коваленко",
+        "email": "maria@example.com",
+        "phone": "+380992345678",
+        "role": "адміністратор",
+        "registrationDate": "2023-12-10",
+        "status": "активний"
+    }
+]
